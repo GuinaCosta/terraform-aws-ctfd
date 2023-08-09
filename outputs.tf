@@ -1,10 +1,10 @@
 output "lb_dns_name" {
-  value       = var.create_in_aws ? module.ecs[0].lb_dns_name : module.docker[0].lb_dns_name
+  value       = var.create_in_aws ? module.ecs[0].lb_dns_name : "it ran on docker?"
   description = "DNS name for the Load Balancer"
 }
 
 output "lb_port" {
-  value       = var.create_in_aws ? 80 : module.docker[0].lb_port
+  value       = var.create_in_aws ? 80 : "it ran on docker?"
   description = "Port that CTFd is reachable on"
 }
 
