@@ -9,10 +9,10 @@ terraform {
       source  = "hashicorp/random"
       version = "3.4.3"
     }
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "3.0.1"
-    }
+    # docker = {
+    #   source  = "kreuzwerker/docker"
+    #   version = "3.0.1"
+    # }
   }
 }
 
@@ -98,10 +98,10 @@ module "cdn" {
   origin_domain_name       = var.create_in_aws ? module.ecs[0].lb_dns_name : ""
 }
 
-module "docker" {
-  count            = var.create_in_aws ? 0 : 1
-  source           = "./modules/docker"
-  ctfd_image       = var.ctfd_image
-  db_character_set = var.db_character_set
-  db_collation     = var.db_collation
-}
+# module "docker" {
+#   count            = var.create_in_aws ? 0 : 1
+#   source           = "./modules/docker"
+#   ctfd_image       = var.ctfd_image
+#   db_character_set = var.db_character_set
+#   db_collation     = var.db_collation
+# }
