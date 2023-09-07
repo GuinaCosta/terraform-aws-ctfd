@@ -1,5 +1,6 @@
 resource "aws_cloudwatch_log_group" "ctfd" {
   name = var.app_name
+  retention_in_days = 1
 
   tags = {
     Environment = "production"
